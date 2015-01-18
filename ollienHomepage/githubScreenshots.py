@@ -1,5 +1,8 @@
+#!/usr/bin/env python
 import requests
 import json
+import sys
+import MySQLdb
 
 class GithubScreenshots(object):
     def __init__(self):
