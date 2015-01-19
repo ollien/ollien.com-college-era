@@ -1,9 +1,51 @@
 from django.core.management.base import BaseCommand, CommandError
 from ... import githubScreenshots
+from ...models import Repo
+from ... import configReader
+import requests
+from shutil import copyfileobj
+import os.path
+from os import listdir
 class Command(BaseCommand):
-    help = "Runs a script that grabs screenshots from github.com/ollien/"
-    def __init__(self):
-        super(Command,self).__init__()
-        self.github = githubScreenshots.GithubScreenshots()
-    def handle(self,*args,**kwargs):
-        print "Running!"
+	help = "Runs a script that grabs screenshots from github.com/ollien/"
+	def __init__(self):
+		super(Command,self).__init__()
+		self.config = configReader.ConfigReader("ollienHomepage/config.txt")
+		self.keys = self.config.getKeys() 
+		self.github = githubScreenshots.GithubScreenshots(self.keys['token'])
+	def handle(self,*args,**kwargs):
+		repos = self.github.getRepos('ollien')
+		if type(repos)!=list:
+			raise Exception("Github returned statuscode "+str(repos))
+		for repo in repos:
+			repoName = repo['name']
+			repoDesc = repo['description']
+			repoUrl = repo['url']
+			screenshot = self.github.getFile("README_SCREENSHOT.png",'ollien',repoName)
+			if (type(screenshot)!=dict):
+				if screenshot==404:
+					continue
+				raise Exception("Github returned status code "+str(screenshot))
+			try:
+				repo = Repo.objects.get(name=repoName)
+			except Repo.DoesNotExist:
+				repo = None
+			screenshotUrl = screenshot['download_url']
+			sha = screenshot['sha']					
+			if repo != None:
+				if repo.sha==sha:
+					continue
+				else:
+					repo.sha=sha
+					self.downloadToPath(screenshotUrl,os.path.join(self.keys['saveLocation'],sha+".png"))
+					repo.imagePath=os.path.join(self.keys['saveLocation'],sha+".png")
+			else:
+				self.downloadToPath(screenshotUrl,os.path.join(self.keys['saveLocation'],sha+".png"))
+				Repo(name=repoName,description=repoDesc,sha=sha,imagePath=os.path.join(self.keys['saveLocation'],sha+".png")).save()				
+
+	def downloadToPath(self,url,path):
+		r = requests.get(url,stream=True)
+		with open(path,'wb') as f:
+			r.raw.decode_content=True
+			copyfileobj(r.raw,f)
+		r.close()
