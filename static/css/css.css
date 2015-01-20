@@ -1,0 +1,261 @@
+@media (max-width:960px){
+    header{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        height: 100px;
+    }
+    ul#headerList{
+        list-style: none;
+    }
+    img#me{
+        position:relative;
+        float:left;
+        margin-top:4px;
+        margin-right:15px;
+        width:90px;
+        height:90px;
+    }
+    a.header-item{
+        display:block;
+        float:left;
+        color:#191919;
+        font-family: 'Open Sans',sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 28px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-bottom: 5px #191919 solid;
+        text-decoration: none;
+    }
+    a#ollien{
+        color:#469FB3;
+        text-decoration: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-bottom: 5px #469FB3 solid;
+    }
+    a.header-item:hover{
+        color:#469FB3;
+        text-decoration: none;
+        border-bottom: 5px #469FB3 solid;
+    }
+    div#slogan{
+        font-family: 'Open Sans',sans-serif;
+        text-align:center;
+        margin-left:auto;
+        margin-right:auto;
+        font-size:30px;
+        font-weight: 600;
+        width:700px;
+    }
+    div#bio{
+        font-family: 'Open Sans',sans-serif;
+        margin-left:auto;
+        margin-right:auto;
+        font-size: 14px;
+        width:700px;
+        margin-top:20px;
+    }
+    span.tab{
+        padding-right: 50px;
+    }
+
+    div#display{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-family: 'Open Sans',sans-serif;
+    }
+    div.imageSpan{
+        max-width:700px;
+        max-height:700px;
+        min-width:700px;
+        min-height:700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img.displayImage{
+        max-width:700px;
+        max-height:700px;
+    }
+    div.title{
+        font-size:25px;
+        font-weight:bold;
+        margin-top: 30px;
+        text-align:center;
+        margin-left:auto;
+        margin-right:auto;
+        width:700px;
+    }
+    div.desc{
+        display: inline-block;
+        margin-top:7px;
+        font-size:15px;
+        margin-left: auto;
+        margin-right: auto;
+        width:700px;
+    }
+    div#dots{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        width:700px;
+        text-align:center;
+        cursor: default;
+        -webkit-user-select: none; /* Chrome/Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+        -o-user-select: none;
+        user-select: none;
+    }
+    span.circle{
+        display:inline-block;
+        height:5px;
+        width:5px;
+        background:#000;
+        padding-left:3px;
+        padding-right:3px;
+        -webkit-border-radius: 2.5px;
+        -moz-border-radius: 2.5px;
+        border-radius:2.5px;
+    }
+
+    span.circle:hover{
+        background:#469FB3;
+    }
+}
+@media (min-width:960px){
+    header{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        height: 100px;
+    }
+    ul#headerList{
+        list-style: none;
+    }
+    img#me{
+        position:relative;
+        float:left;
+        margin-top:4px;
+        margin-right:15px;
+        width:90px;
+        height:90px;
+    }
+    a.header-item{
+        display:block;
+        float:left;
+        color:#191919;
+        font-family: 'Open Sans',sans-serif;
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 28px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-bottom: 5px #191919 solid;
+        text-decoration: none;
+    }
+    a#ollien{
+        color:#469FB3;
+        text-decoration: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-bottom: 5px #469FB3 solid;
+    }
+    a.header-item:hover{
+        color:#469FB3;
+        text-decoration: none;
+        border-bottom: 5px #469FB3 solid;
+    }
+    div#slogan{
+        font-family: 'Open Sans',sans-serif;
+        text-align:center;
+        margin-left:auto;
+        margin-right:auto;
+        font-size:30px;
+        font-weight: 600;
+        width:900px;
+    }
+    div#bio{
+        font-family: 'Open Sans',sans-serif;
+        margin-left:auto;
+        margin-right:auto;
+        font-size: 14px;
+        width:900px;
+        margin-top:20px;
+    }
+    span.tab{
+        padding-right: 50px;
+    }
+
+    div#display{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-family: 'Open Sans',sans-serif;
+    }
+    div.imageSpan{
+        max-width:900px;
+        max-height:900px;
+        min-width:900px;
+        min-height:900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img.displayImage{
+        max-width:900px;
+        max-height:900px;
+    }
+    div.title{
+        font-size:25px;
+        font-weight:bold;
+        margin-top: 30px;
+        text-align:center;
+        margin-left:auto;
+        margin-right:auto;
+        width:900px;
+    }
+    div.desc{
+        display: inline-block;
+        margin-top:7px;
+        font-size:15px;
+        margin-left: auto;
+        margin-right: auto;
+        width:900px;
+    }
+    div#dots{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        width:900px;
+        text-align:center;
+        cursor: default;
+        -webkit-user-select: none; /* Chrome/Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+        -o-user-select: none;
+        user-select: none;
+    }
+    span.circle{
+        display:inline-block;
+        height:5px;
+        width:5px;
+        background:#000;
+        transition:background 50ms linear;
+        padding-left:3px;
+        padding-right:3px;
+        -webkit-border-radius: 2.5px;
+        -moz-border-radius: 2.5px;
+        border-radius:2.5px;
+    }
+
+    span.circle:hover{
+        background:#469FB3;
+        transition:background 50ms linear;
+    }
+
+}

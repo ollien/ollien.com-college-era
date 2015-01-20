@@ -1,8 +1,45 @@
 <html>
 <head>
-	<title>ollien</title>
+    <title>ollien</title>
+    <link rel="icon" href="/static/img/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic,400,700' rel='stylesheet' type='text/css'>
+    <link href='/static/css/css.css' rel='stylesheet' type='text/css'>
 </head>
+<header>
+    <img id="me" src="http://i.imgur.com/qo9KMkx.png"/>
+    <ul id="headerList">
+    <li><a class="header-item" id="ollien" href="/">ollien</a></li>
+    <li><a class="header-item" href="http://blog.ollien.com">blog</a></li>
+    <li><a class="header-item" href="http://twitter.com/theollien">twitter</a></li>
+    <li><a class="header-item" href="http://github.com/ollien/">github</a></li>
+    <li><a class="header-item" href="mailto:njk828@gmaill.com">email</a></li>
+    <meta name="viewport" content="width=device-width, initial-scale=.5, user-scalable=yes">
+    <meta name="MobileOptimized" content="700" />
+    <meta name="HandheldFriendly" content="false">
+</ul>
+</header>
 <body>
-{{message}}
+    <div id="slogan">Student, Programmer, Geek.</div>
+    <div id="bio">
+        <span class="tab"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum ultricies velit, eu rhoncus magna sagittis vel. Sed tortor purus, feugiat eget convallis sed, tempor eu urna. In sollicitudin augue bibendum purus venenatis tincidunt. Quisque eget luctus nisl, sed gravida mauris. Fusce ut ultrices justo, nec volutpat ex. Vivamus et lorem non lacus pulvinar scelerisque sed nec orci. Quisque sit amet enim et mauris suscipit sollicitudin at vel eros. Quisque placerat pretium lorem, non ullamcorper erat sollicitudin eu. Cras in velit turpis. Pellentesque rutrum et quam id viverra. Fusce eu condimentum nunc. In tincidunt felis vel dolor sollicitudin elementum. Etiam.</div>
+    <div id="display">
+	{% for project in projects %}
+        	<div class="title">{{project.title}}</div>
+	{% endfor %}
+        	<div id="dots">
+			{% for project in projects %}
+            			<span class="circle"></span>
+			{%endfor%}
+        	</div>
+	{% for project in projects %}	
+        	<div class="desc">{{project.desc}}</div>
+        	<div class="imageSpan">
+            <img class="displayImage" src="{{project.path}}"/>
+	{% endfor %}	
+        </div>
+    </div>
+
+</body>    <body>
+    
 </body>
 </html>
