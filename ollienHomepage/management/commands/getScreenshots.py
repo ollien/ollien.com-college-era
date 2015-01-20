@@ -20,7 +20,7 @@ class Command(BaseCommand):
 		for repo in repos:
 			repoName = repo['name']
 			repoDesc = repo['description']
-			repoUrl = repo['url']
+			repoUrl = repo['html_url']
 			screenshot = self.github.getFile("README_SCREENSHOT.png",'ollien',repoName)
 			if (type(screenshot)!=dict):
 				if screenshot==404:
@@ -33,15 +33,18 @@ class Command(BaseCommand):
 			screenshotUrl = screenshot['download_url']
 			sha = screenshot['sha']					
 			if repo != None:
+				if repo.description!=repoDesc:
+					repo.description=repoDesc
 				if repo.sha==sha:
 					continue
 				else:
 					repo.sha=sha
 					self.downloadToPath(screenshotUrl,os.path.join(self.keys['saveLocation'],sha+".png"))
 					repo.imagePath=os.path.join(self.keys['saveLocation'],sha+".png")
+					repo.save()
 			else:
 				self.downloadToPath(screenshotUrl,os.path.join(self.keys['saveLocation'],sha+".png"))
-				Repo(name=repoName,description=repoDesc,sha=sha,imagePath=os.path.join(self.keys['saveLocation'],sha+".png")).save()				
+				Repo(name=repoName,description=repoDesc,sha=sha,imagePath=os.path.join(self.keys['saveLocation'],sha+".png"),url=repoUrl).save()				
 
 	def downloadToPath(self,url,path):
 		r = requests.get(url,stream=True)

@@ -5,4 +5,4 @@ class Repo(models.Model):
 	description=models.TextField()
 	sha=models.TextField()
 	imagePath=models.TextField()
-	
+	url=models.TextField()
