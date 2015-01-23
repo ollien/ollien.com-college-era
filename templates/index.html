@@ -26,7 +26,11 @@
     <div id="projects">Projects</div>
     <div id="dots">
         {% for project in projects %}
+            {% if forloop.counter0 == 0 %}
+                <span class="circle selected" num={{forloop.counter0}}></span>
+            {% else %}
                 <span class="circle" num={{forloop.counter0}}></span>
+            {% endif %}
         {% endfor %}
     </div>
     {% for project in projects %}

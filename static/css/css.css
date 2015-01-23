@@ -142,6 +142,11 @@
 
     span.circle:hover{
         background:#469FB3;
+        transition:background 50ms linear;
+    }
+    
+    span.circle.selected{
+        background:#469FB3;
     }
     
     .fade{
@@ -304,6 +309,9 @@
     span.circle:hover{
         background:#469FB3;
         transition:background 50ms linear;
+    }
+    span.circle.selected{
+        background:#469FB3;
     }
     .fade{
         opacity: 1;
