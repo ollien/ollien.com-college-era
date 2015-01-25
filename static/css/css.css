@@ -50,6 +50,7 @@
         font-size:30px;
         font-weight: 600;
         width:700px;
+        clear: both;
     }
     div#bio{
         font-family: 'Open Sans',sans-serif;
@@ -189,8 +190,8 @@
         font-weight: bold;
         font-size: 25px;
         margin-top: 28px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 45px;
+        padding-right: 45px;
         border-bottom: 5px #191919 solid;
         text-decoration: none;
     }
@@ -214,6 +215,7 @@
         font-size:30px;
         font-weight: 600;
         width:900px;
+        clear: both;
     }
     div#bio{
         font-family: 'Open Sans',sans-serif;
