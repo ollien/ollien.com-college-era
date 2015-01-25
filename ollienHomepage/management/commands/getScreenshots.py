@@ -40,11 +40,11 @@ class Command(BaseCommand):
 				else:
 					repo.sha=sha
 					self.downloadToPath(screenshotUrl,os.path.join(self.keys['saveLocation'],sha+".png"))
-					repo.imagePath=os.path.join(self.keys['saveLocation'],sha+".png")
+					repo.imagePath=os.path.join(self.keys['webLocation'],sha+".png")
 					repo.save()
 			else:
 				self.downloadToPath(screenshotUrl,os.path.join(self.keys['saveLocation'],sha+".png"))
-				Repo(name=repoName,description=repoDesc,sha=sha,imagePath=os.path.join(self.keys['saveLocation'],sha+".png"),url=repoUrl).save()				
+				Repo(name=repoName,description=repoDesc,sha=sha,imagePath=os.path.join(self.keys['webLocation'],sha+".png"),url=repoUrl).save()				
 
 	def downloadToPath(self,url,path):
 		r = requests.get(url,stream=True)
