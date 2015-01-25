@@ -22,7 +22,8 @@
 <body>
     <div id="slogan">Student, Programmer, Geek.</div>
     <div id="bio">
-        <span class="tab"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum ultricies velit, eu rhoncus magna sagittis vel. Sed tortor purus, feugiat eget convallis sed, tempor eu urna. In sollicitudin augue bibendum purus venenatis tincidunt. Quisque eget luctus nisl, sed gravida mauris. Fusce ut ultrices justo, nec volutpat ex. Vivamus et lorem non lacus pulvinar scelerisque sed nec orci. Quisque sit amet enim et mauris suscipit sollicitudin at vel eros. Quisque placerat pretium lorem, non ullamcorper erat sollicitudin eu. Cras in velit turpis. Pellentesque rutrum et quam id viverra. Fusce eu condimentum nunc. In tincidunt felis vel dolor sollicitudin elementum. Etiam.</div>
+      Hello there! My name is Nick and I'm a 16 year old programmer with a large interest in programming, technology, and sandwiches. I've worked on quite a few projects with languages such as Python, C(++), Javascript, and Java -- in addition to working with many libraries such as Django, Cherrypy, the Android SDK, Pebble SDK and many more. A few of my projects are being displayed below, with more on my <a id="githubBio" href="http://github.com/ollien/">github</a>. Feel free to shoot me an email at <a id="emailBio" href="mailto:njk828@gmail.com">njk828@gmail.com</a>.
+      </div>
     <div id="projects">Projects</div>
     <div id="dots">
         {% for project in projects %}
@@ -34,6 +35,7 @@
         {% endfor %}
     </div>
     {% for project in projects %}
+        <a class="displayLink" href={{project.url}}>
         {% if forloop.counter0 == 0 %}
             <div class="display fade" num={{forloop.counter0}}>
         {% else %}
@@ -42,7 +44,8 @@
                 <div class="title">{{project.title}}</div>
                 <div class="desc">{{project.desc}}</div>
                     	<div class="imageSpan">
-                    <img class="displayImage" src="{{project.path}}"/>
+                        <img class="displayImage" src="{{project.path}}"/>
+                    </a>
             	</div>
         </div>
     	{% endfor %}
@@ -51,4 +54,6 @@
         ready();
     </script>
 </body>
+<footer>
+    <span id="copyright">&#169; {{year}} Nick Krichevsky</span> <span id="source"><a href="http://github.com/ollien/ollien.com">Source code of this site</a></span>
 </html>

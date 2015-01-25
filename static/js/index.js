@@ -13,12 +13,13 @@ function ready(){
 				var currentDisplay = displays[currentIndex];
 				canFade=false;
 				if (currentIndex != item.getAttribute("num")){
-				currentIndex = item.getAttribute("num");
-				var newDisplay = displays[currentIndex];
-				console.log(newDisplay);	
-				console.log(window.getComputedStyle(currentDisplay).getPropertyValue("transition-duration"));
-				fade(currentDisplay,newDisplay);			
-			}
+					canFade=false;
+					dots[currentIndex].classList.remove('selected');
+					currentIndex = item.getAttribute("num");
+					item.classList.add('selected');
+					var newDisplay = displays[currentIndex];
+					fade(currentDisplay,newDisplay);			
+				}
 		} 
 		});
 		autoFade(5000, dots, displays);

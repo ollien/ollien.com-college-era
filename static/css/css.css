@@ -33,8 +33,8 @@
     a#ollien{
         color:#469FB3;
         text-decoration: none;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
         border-bottom: 5px #469FB3 solid;
     }
     a.header-item:hover{
@@ -60,15 +60,47 @@
         width:700px;
         margin-top:20px;
     }
+    a#githubBio{
+        color:#469FB3;
+    }
+    a#githubBio:visited{
+        color:#469FB3;
+    }
+    a#githubBio:hover{
+        color:#469FB3;
+    }
+    a#githubBio:active{
+        color:#469FB3;
+    }
+    a#emailBio{
+        color:#469FB3;
+    }
+    a#emailBio:visited{
+        color:#469FB3;
+    }
+    a#emailBio:hover{
+        color:#469FB3;
+    }
+    a#emailBio:active{
+        color:#469FB3;
+    }
     span.tab{
-        padding-right: 50px;
+        padding-right: 35px;
+    }
+
+    a.displayLink{
+        text-decoration: none;
+        color:#191919;
     }
 
     div.display{
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+        text-decoration: none;
+        color:#191919;
         font-family: 'Open Sans',sans-serif;
+        padding-bottom:20px;
     }
     div.hiddenDisplay{
         display:none;
@@ -132,8 +164,8 @@
     span.circle{
         display:inline-block;
         cursor:pointer;
-        height:7px;
-        width:7px;
+        height:6px;
+        width:9px;
         background:#191919;
         padding-left:3px;
         padding-right:3px;
@@ -191,16 +223,16 @@
         font-weight: bold;
         font-size: 25px;
         margin-top: 28px;
-        padding-left: 45px;
-        padding-right: 45px;
+        padding-left: 40px;
+        padding-right: 40px;
         border-bottom: 5px #191919 solid;
         text-decoration: none;
     }
     a#ollien{
         color:#469FB3;
         text-decoration: none;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
         border-bottom: 5px #469FB3 solid;
     }
     a.header-item:hover{
@@ -223,17 +255,47 @@
         margin-left:auto;
         margin-right:auto;
         font-size: 14px;
-        width:900px;
+        width:800px;
         margin-top:20px;
     }
+    a#githubBio{
+        color:#469FB3;
+    }
+    a#githubBio:visited{
+        color:#469FB3;
+    }
+    a#githubBio:hover{
+        color:#469FB3;
+    }
+    a#githubBio:active{
+        color:#469FB3;
+    }
+    a#emailBio{
+        color:#469FB3;
+    }
+    a#emailBio:visited{
+        color:#469FB3;
+    }
+    a#emailBio:hover{
+        color:#469FB3;
+    }
+    a#emailBio:active{
+        color:#469FB3;
+    }
     span.tab{
-        padding-right: 50px;
+        padding-right: 35px;
+    }
+
+    a.displayLink{
+        text-decoration: none;
+        color:#191919;
     }
 
     div.display{
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+        color:#191919;
         font-family: 'Open Sans',sans-serif;
         padding-bottom:20px;
     }
@@ -298,10 +360,9 @@
     span.circle{
         display:inline-block;
         cursor:pointer;
-        height:7px;
-        width:7px;
+        height:6px;
+        width:9px;
         background:#191919;
-        transition:background 50ms linear;
         padding-left:3px;
         padding-right:3px;
         -webkit-border-radius: 3.5px;
@@ -328,5 +389,19 @@
         -moz-transition: opacity 400ms ease-in-out;
         -webkit-transition: opacity 400ms ease-in-out;
     }
-    
+    footer{
+        font-family: 'Open Sans',sans-serif;
+        font-size: 14px;
+    }
+    span#copyright{
+        float:left;
+        margin-bottom: 5px;
+    }
+    span#source{
+        float:right;
+    }
+    span#source > a{
+        color:#469FB3;
+    }
+
 }
