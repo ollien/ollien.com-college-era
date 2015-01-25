@@ -5,6 +5,7 @@ function ready(){
 	var displays ={}
 	var currentIndex = "0";
 	rawDisplays.forEach(function(item){
+		item.style.minHeight="800px"
 		displays[item.getAttribute("num")]=item
 	});
 	console.log(displays);
@@ -35,7 +36,11 @@ function timeStringtoTime(s){
 		return parseFloat(result)*1000;
 	}
 }
-
+function showDots(){
+	var element = document.getElementById('dots');
+	console.log(element);
+	element.style.display='block';	
+}
 function autoFade(t,circles,displays,index){
 	if (canFade){
 		if (index!==undefined && index>=0) {

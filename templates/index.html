@@ -22,10 +22,13 @@
 <body>
     <div id="slogan">Student, Programmer, Geek.</div>
     <div id="bio">
-      Hello there! My name is Nick and I'm a 16 year old programmer with a large interest in programming, general technology, and sandwiches. I've worked on quite a few projects using languages such as Python, C(++), Javascript, and Java. In addition, I've worked with many libraries including Django, Cherrypy, the Android SDK, the Pebble SDK, and many more. A few of my projects are displayed below, and more are on my <a id="githubBio" href="http://github.com/ollien/">github</a>. Feel free to shoot me an email at <a id="emailBio" href="mailto:njk828@gmail.com">njk828@gmail.com</a>.
+      Hello there! My name is Nick and I'm a 16 year old programmer with a large interest in programming, general technology, and sandwiches. I've worked on quite a few projects using languages such as Python, C(++), Javascript, and Java. In addition, I've worked with lots of libraries including Django, Cherrypy, the Android SDK, the Pebble SDK, and others. A few of my projects are displayed below, and more are on <a id="githubBio" href="http://github.com/ollien/">my github</a>. Feel free to shoot me an email at <a id="emailBio" href="mailto:njk828@gmail.com">njk828@gmail.com</a>.
       </div>
     <div id="projects">Projects</div>
     <div id="dots">
+        <script>
+            showDots();
+        </script>
         {% for project in projects %}
             {% if forloop.counter0 == 0 %}
                 <span class="circle selected" num={{forloop.counter0}}></span>
@@ -36,17 +39,27 @@
     </div>
     {% for project in projects %}
         <a class="displayLink" href={{project.url}}>
-        {% if forloop.counter0 == 0 %}
-            <div class="display fade" num={{forloop.counter0}}>
-        {% else %}
-            <div class="display hiddenDisplay fade faded" num={{forloop.counter0}}>
-        {% endif %}
+            <div class="display fade {% if forloop.counter0 != 0 %}hiddenDisplay faded {%endif%}" num={{forloop.counter0}}>
                 <div class="title">{{project.title}}</div>
                 <div class="desc">{{project.desc}}</div>
-                    	<div class="imageSpan">
-                        <img class="displayImage" src="{{project.path}}"/>
-                    </a>
-            	</div>
+                <div class="imageSpan">
+                    <img class="displayImage" src="{{project.path}}"/>
+                </div>
+            </div>
+        </a>
+            	<noscript>
+                	{% if forloop.counter0 != 0 %}
+                	<a class="displayLink" href={{project.url}}>
+                    	<div class="display" num={{forloop.counter0}}>
+                    	    <div class="title">{{project.title}}</div>
+                    	    <div class="desc">{{project.desc}}</div>
+                        <div class="imageSpan">
+                           <img class="displayImage" src="{{project.path}}"/>
+                        </div>
+                    </div>
+                </a>
+                {% endif %}
+            </noscript>                	
         </div>
     	{% endfor %}
 
