@@ -11,21 +11,23 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import os.path
+import configReader
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+config = configReader.ConfigReader('ollienHomepage/django-config.txt')
+keys = config.getKeys()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5i&2g3o0#(f=3*8p&8+el6@8qypyr85w(h)v$m%*3q8^gnf8og'
+SECRET_KEY = keys['secret-key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.ollien.com.','.ollien.com']
 
 
 # Application definition
