@@ -197,19 +197,23 @@
     
     footer{
         font-family: 'Open Sans',sans-serif;
-        font-size: 14px;
-        margin-bottom: 22px;
+        font-size: 12px;
+        margin-bottom: 10px;
     }
-    span#copyright{
-        float:left;
-        margin-bottom: 5px;
-        width:900px;
+    span#license{
+	display:block;
+	width:100%;
     }
     span#source{
-        float:right;
+	display:block;
+	width:100%;
     }
     span#source > a{
         color:#469FB3;
+    }
+    span#copyright{
+	display:block;
+        width:100%;
     }
 }
 @media (min-width:960px){
@@ -406,18 +410,23 @@
     }
     footer{
         font-family: 'Open Sans',sans-serif;
-        font-size: 14px;
-        margin-bottom: 22px;
+        font-size: 12px;
+        margin-bottom: 10px;
     }
-    span#copyright{
-        float:left;
-        width:900px;
+    span#license{
+	display:block;
+        width:100%:
     }
     span#source{
-        float:right;
+	display:block;
+	width:100%;
     }
     span#source > a{
         color:#469FB3;
+    }
+    span#copyright{
+       display: block;
+       width:100%;
     }
 
 }
