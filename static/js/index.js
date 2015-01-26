@@ -23,7 +23,7 @@ function ready(){
 				}
 		} 
 		});
-		autoFade(5000, dots, displays);
+		autoFade(6000, dots, displays);
 }
 function timeStringtoTime(s){
 	if (s.indexOf('ms')!=-1){
