@@ -1,9 +1,9 @@
 var canFade = true;
+var currentIndex = "0";
 function ready(){
 	var dots = Array.prototype.slice.call(document.querySelectorAll(".circle"));
 	var rawDisplays = Array.prototype.slice.call(document.querySelectorAll(".display"));
 	var displays ={}
-	var currentIndex = "0";
 	rawDisplays.forEach(function(item){
 		item.style.minHeight="800px"
 		displays[item.getAttribute("num")]=item
@@ -28,7 +28,6 @@ function ready(){
 function timeStringtoTime(s){
 	if (s.indexOf('ms')!=-1){
 		var result = s.replace('ms','');
-		console.log(result);
 		return parseInt(result);
 	}
 	else{
@@ -38,7 +37,6 @@ function timeStringtoTime(s){
 }
 function showDots(){
 	var element = document.getElementById('dots');
-	console.log(element);
 	element.style.display='block';	
 }
 function autoFade(t,circles,displays,index){
@@ -51,6 +49,7 @@ function autoFade(t,circles,displays,index){
 			else
 				index=0;
 			endDisplay = displays[index.toString()];
+			currentIndex = index.toString();
 			fade(startDisplay,endDisplay);
 			circles[index].classList.add('selected');
 			
