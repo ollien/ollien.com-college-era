@@ -1,6 +1,6 @@
 var canFade = true;
 var currentIndex = "0";
-function ready(){
+document.addEventListener('DOMContentLoaded', function(){
 	var dots = Array.prototype.slice.call(document.querySelectorAll(".circle"));
 	var rawDisplays = Array.prototype.slice.call(document.querySelectorAll(".display"));
 	var displays ={}
@@ -8,7 +8,6 @@ function ready(){
 		item.style.minHeight="800px"
 		displays[item.getAttribute("num")]=item
 	});
-	console.log(displays);
 	dots.forEach(function(item){
 			item.onclick = function(){
 				var currentDisplay = displays[currentIndex];
@@ -24,7 +23,7 @@ function ready(){
 		} 
 		});
 		autoFade(6000, dots, displays);
-}
+});
 function timeStringtoTime(s){
 	if (s.indexOf('ms')!=-1){
 		var result = s.replace('ms','');
