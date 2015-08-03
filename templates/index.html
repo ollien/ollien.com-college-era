@@ -31,9 +31,9 @@
         </script>
         {% for project in projects %}
             {% if forloop.counter0 == 0 %}
-                <span class="circle selected" num={{forloop.counter0}}></span>
+                <a class="circle selected" num={{forloop.counter0}}></a>
             {% else %}
-                <span class="circle" num={{forloop.counter0}}></span>
+                <a class="circle" num={{forloop.counter0}}></a>
             {% endif %}
         {% endfor %}
     </div>

@@ -160,7 +160,7 @@
         -o-user-select: none;
         user-select: none;
     }
-    span.circle{
+    a.circle{
         display:inline-block;
         cursor:pointer;
         height:6px;
@@ -173,12 +173,12 @@
         border-radius:3.5px;
     }
 
-    span.circle:hover{
+    a.circle:hover{
         background:#469FB3;
         transition:background 50ms linear;
     }
     
-    span.circle.selected{
+    a.circle.selected{
         background:#469FB3;
     }
     
@@ -376,7 +376,7 @@
         -o-user-select: none;
         user-select: none;
     }
-    span.circle{
+    a.circle{
         display:inline-block;
         cursor:pointer;
         height:6px;
@@ -389,11 +389,11 @@
         border-radius:3.5px;
     }
 
-    span.circle:hover{
+    a.circle:hover{
         background:#469FB3;
         transition:background 50ms linear;
     }
-    span.circle.selected{
+    a.circle.selected{
         background:#469FB3;
     }
     .fade{
