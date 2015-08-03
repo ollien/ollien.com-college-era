@@ -6,11 +6,14 @@ import requests
 from shutil import copyfileobj
 import os.path
 from os import listdir
+
+BASE_DIR = os.path.dirname(__file__)
+
 class Command(BaseCommand):
 	help = "Runs a script that grabs screenshots from github.com/ollien/"
 	def __init__(self):
 		super(Command,self).__init__()
-		self.config = configReader.ConfigReader("ollienHomepage/config.txt")
+		self.config = configReader.ConfigReader(os.path.join(BASE_DIR,"../../config.txt"))
 		self.keys = self.config.getKeys() 
 		self.github = githubScreenshots.GithubScreenshots(self.keys['token'])
 	def handle(self,*args,**kwargs):
