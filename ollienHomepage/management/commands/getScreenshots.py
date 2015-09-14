@@ -1,4 +1,4 @@
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand,  CommandError
 from ... import githubScreenshots
 from ...models import Repo
 from ... import configReader
@@ -12,11 +12,11 @@ BASE_DIR = os.path.dirname(__file__)
 class Command(BaseCommand):
 	help = "Runs a script that grabs screenshots from github.com/ollien/"
 	def __init__(self):
-		super(Command,self).__init__()
-		self.config = configReader.ConfigReader(os.path.join(BASE_DIR,"../../config.txt"))
+		super(Command, self).__init__()
+		self.config = configReader.ConfigReader(os.path.join(BASE_DIR, "../../config.txt"))
 		self.keys = self.config.getKeys() 
 		self.github = githubScreenshots.GithubScreenshots(self.keys['token'])
-	def handle(self,*args,**kwargs):
+	def handle(self, *args, **kwargs):
 		repos = self.github.getRepos('ollien')
 		if type(repos)!=list:
 			raise Exception("Github returned statuscode "+str(repos))
@@ -24,7 +24,7 @@ class Command(BaseCommand):
 			repoName = repo['name']
 			repoDesc = repo['description']
 			repoUrl = repo['html_url']
-			screenshot = self.github.getFile("README_SCREENSHOT.png",'ollien',repoName)
+			screenshot = self.github.getFile("README_SCREENSHOT.png", 'ollien', repoName)
 			if (type(screenshot)!=dict):
 				if screenshot==404:
 					continue
@@ -42,16 +42,16 @@ class Command(BaseCommand):
 					continue
 				else:
 					repo.sha=sha
-					self.downloadToPath(screenshotUrl,os.path.join(self.keys['saveLocation'],sha+".png"))
-					repo.imagePath=os.path.join(self.keys['webLocation'],sha+".png")
+					self.downloadToPath(screenshotUrl, os.path.join(self.keys['saveLocation'], sha+".png"))
+					repo.imagePath=os.path.join(self.keys['webLocation'], sha+".png")
 					repo.save()
 			else:
-				self.downloadToPath(screenshotUrl,os.path.join(self.keys['saveLocation'],sha+".png"))
-				Repo(name=repoName,description=repoDesc,sha=sha,imagePath=os.path.join(self.keys['webLocation'],sha+".png"),url=repoUrl).save()				
+				self.downloadToPath(screenshotUrl, os.path.join(self.keys['saveLocation'], sha+".png"))
+				Repo(name=repoName, description=repoDesc, sha=sha, imagePath=os.path.join(self.keys['webLocation'], sha+".png"), url=repoUrl).save()				
 
-	def downloadToPath(self,url,path):
-		r = requests.get(url,stream=True)
-		with open(path,'wb') as f:
+	def downloadToPath(self, url, path):
+		r = requests.get(url, stream=True)
+		with open(path, 'wb') as f:
 			r.raw.decode_content=True
-			copyfileobj(r.raw,f)
+			copyfileobj(r.raw, f)
 		r.close()
