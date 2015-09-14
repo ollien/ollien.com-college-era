@@ -10,6 +10,10 @@ import titlecase
 
 BASE_DIR = os.path.dirname(__file__)
 
+exceptions = {
+	"Bittorrent": "BitTorrent"
+}
+
 class Command(BaseCommand):
 	help = "Runs a script that grabs screenshots from github.com/ollien/"
 	def __init__(self):
@@ -23,6 +27,9 @@ class Command(BaseCommand):
 			raise Exception("Github returned statuscode "+str(repos))
 		for repo in repos:
 			repoName = titlecase.titlecase(repo['name'])
+			for word in repoName:
+				if word in exceptions:
+					repoName = repoName.replace(word, exceptions[word])
 			repoDesc = repo['description']
 			repoUrl = repo['html_url']
 			screenshot = self.github.getFile("README_SCREENSHOT.png", 'ollien', repoName)
