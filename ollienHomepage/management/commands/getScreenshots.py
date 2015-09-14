@@ -27,7 +27,7 @@ class Command(BaseCommand):
 			raise Exception("Github returned statuscode "+str(repos))
 		for repo in repos:
 			repoName = titlecase.titlecase(repo['name'])
-			for word in repoName:
+			for word in repoName.split("-"):
 				if word in exceptions:
 					repoName = repoName.replace(word, exceptions[word])
 			repoDesc = repo['description']
