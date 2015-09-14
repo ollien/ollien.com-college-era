@@ -6,6 +6,7 @@ import requests
 from shutil import copyfileobj
 import os.path
 from os import listdir
+import titlecase
 
 BASE_DIR = os.path.dirname(__file__)
 
@@ -21,7 +22,7 @@ class Command(BaseCommand):
 		if type(repos)!=list:
 			raise Exception("Github returned statuscode "+str(repos))
 		for repo in repos:
-			repoName = repo['name']
+			repoName = titlecase.titlecase(repo['name'])
 			repoDesc = repo['description']
 			repoUrl = repo['html_url']
 			screenshot = self.github.getFile("README_SCREENSHOT.png", 'ollien', repoName)
