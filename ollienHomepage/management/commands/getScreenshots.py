@@ -11,7 +11,8 @@ import titlecase
 BASE_DIR = os.path.dirname(__file__)
 
 exceptions = {
-	"Bittorrent": "BitTorrent"
+	"Bittorrent": "BitTorrent",
+	"Playserver": "PlayServer",
 }
 
 class Command(BaseCommand):
