@@ -5,7 +5,7 @@ import sys
 
 class GithubScreenshots(object):
 	def __init__(self,token):
-		self.header = {"Accept:":"application/vnd.github.v3+json"}
+		self.header = {"Accept":"application/vnd.github.v3+json"}
 		self.token=token
 	def getRepos(self,user,per_page=1000):
 		r = requests.get("https://api.github.com/users/%s/repos"%(user,),headers=self.header,auth=(self.token,'x-oauth-basic'),params={'per_page':per_page})
