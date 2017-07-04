@@ -1,0 +1,62 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+#flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 0 80px;
+	font-family: "Montserrat";
+	white-space: nowrap;
+	div {
+		padding: 0 50px;
+	}
+}
+
+#circle {
+	height: 300px;
+	width: 300px;
+}
+
+#personal-info {
+	width: 450px;
+	#realname {
+		font-size: 55px;
+		margin: 0;
+	}
+	#name {
+		font-size: 40px;
+		align-text: center;
+		margin-top: 0;
+	}
+	h3.tagline {
+		font-size: 25px;
+		margin: 0;
+	}
+	#wpi {
+		color: #AC2B37;
+	}
+	#programmer {
+		color: #0047AB;
+	}
+	#heart {
+		color: #D13131;
+	}
+}
+
+#links {
+	color: #000;
+	font-size: 32px;
+	list-style: none;
+	text-align: right;
+	padding: 0;
+	width: 400px;
+	a.social-link {
+		color: #2872c5;
+	}
+}
+
