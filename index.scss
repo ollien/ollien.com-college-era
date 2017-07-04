@@ -1,3 +1,10 @@
+$circle-width-big: 300px;
+$info-width-big: 450px;
+$links-width-big: 400px;
+$outer-padding-big: 80px;
+$padding-big: 50px;
+$big-width-total: $circle-width-big + $info-width-big + $links-width-big + $padding-big;
+
 html, body {
 	height: 100%;
 	width: 100%;
@@ -9,21 +16,20 @@ html, body {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	padding: 0 80px;
+	padding: 0 $outer-padding-big;
 	font-family: "Montserrat";
 	white-space: nowrap;
 	div {
-		padding: 0 50px;
+		padding: 0 $padding-big;
 	}
 }
 
 #circle {
-	height: 300px;
-	width: 300px;
+	width: $circle-width-big;
 }
 
 #personal-info {
-	width: 450px;
+	width: $info-width-big;
 	#realname {
 		font-size: 55px;
 		margin: 0;
@@ -54,7 +60,7 @@ html, body {
 	list-style: none;
 	text-align: right;
 	padding: 0;
-	width: 400px;
+	width: $links-width-big;
 	a.social-link {
 		color: #2872c5;
 	}
