@@ -26,9 +26,11 @@ html, body {
 	padding: 0 $outer-padding-small;
 	font-family: "Montserrat";
 	white-space: nowrap;
+
 	div {
 		padding: 0 $padding-small;
 	}
+
 	@media (min-width: $big-width-total) {
 		padding: 0 $outer-padding-big;
 		div {
@@ -39,6 +41,7 @@ html, body {
 
 #circle {
 	width: $circle-width-small;
+
 	@media (min-width: $big-width-total) {
 		width: $circle-width-big;
 	}
@@ -50,24 +53,30 @@ html, body {
 		font-size: 40px;
 		margin: 0;
 	}
+
 	#name {
 		align-text: center;
 		font-size: 30px;
 		margin-top: 0;
 	}
+
 	h3.tagline {
 		font-size: 20px;
 		margin: 0;
 	}
+
 	#wpi {
 		color: #AC2B37;
 	}
+
 	#programmer {
 		color: #0047AB;
 	}
+
 	#heart {
 		color: #D13131;
 	}
+
 	@media (min-width: $big-width-total) {
 		width: $info-width-big;
 		#realname {
@@ -91,9 +100,11 @@ html, body {
 	text-align: right;
 	padding: 0;
 	width: $links-width-small;
+
 	a.social-link {
 		color: #2872c5;
 	}
+
 	@media (min-width: $big-width-total) {
 		width: $links-width-big;
 		font-size: 32px;
