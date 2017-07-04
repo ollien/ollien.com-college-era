@@ -1,9 +1,16 @@
+$circle-width-small: 250px;
+$info-width-small: 350px;
+$links-width-small: 300px;
+$outer-padding-small: 50px;
+$padding-small: 50px;
+$small-width-total: $circle-width-small + $info-width-small + $links-width-small + $padding-small + $outer-padding-big;
+
 $circle-width-big: 300px;
 $info-width-big: 450px;
 $links-width-big: 400px;
 $outer-padding-big: 80px;
 $padding-big: 50px;
-$big-width-total: $circle-width-big + $info-width-big + $links-width-big + $padding-big;
+$big-width-total: $circle-width-big + $info-width-big + $links-width-big + $padding-big + $outer-padding-big;
 
 html, body {
 	height: 100%;
@@ -16,31 +23,40 @@ html, body {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	padding: 0 $outer-padding-big;
+	padding: 0 $outer-padding-small;
 	font-family: "Montserrat";
 	white-space: nowrap;
 	div {
-		padding: 0 $padding-big;
+		padding: 0 $padding-small;
+	}
+	@media (min-width: $big-width-total) {
+		padding: 0 $outer-padding-big;
+		div {
+			padding: 0 $padding-big;
+		}
 	}
 }
 
 #circle {
-	width: $circle-width-big;
+	width: $circle-width-small;
+	@media (min-width: $big-width-total) {
+		width: $circle-width-big;
+	}
 }
 
 #personal-info {
-	width: $info-width-big;
+	width: $info-width-small;
 	#realname {
-		font-size: 55px;
+		font-size: 40px;
 		margin: 0;
 	}
 	#name {
-		font-size: 40px;
 		align-text: center;
+		font-size: 30px;
 		margin-top: 0;
 	}
 	h3.tagline {
-		font-size: 25px;
+		font-size: 20px;
 		margin: 0;
 	}
 	#wpi {
@@ -52,17 +68,35 @@ html, body {
 	#heart {
 		color: #D13131;
 	}
+	@media (min-width: $big-width-total) {
+		width: $info-width-big;
+		#realname {
+			font-size: 55px;
+		}
+
+		#name {
+			font-size: 40px
+		}
+
+		h3.tagline {
+			font-size: 25px;
+		}
+	}
 }
 
 #links {
 	color: #000;
-	font-size: 32px;
+	font-size: 24px;
 	list-style: none;
 	text-align: right;
 	padding: 0;
-	width: $links-width-big;
+	width: $links-width-small;
 	a.social-link {
 		color: #2872c5;
+	}
+	@media (min-width: $big-width-total) {
+		width: $links-width-big;
+		font-size: 32px;
 	}
 }
 
