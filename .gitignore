@@ -1,4 +1,1 @@
-.DS_Store
-*.pyc
-.fuse_hidden*
-*config.txt
+node_modules
