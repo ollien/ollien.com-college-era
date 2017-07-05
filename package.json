@@ -1,0 +1,20 @@
+{
+  "name": "ollien.com",
+  "version": "2.0.0",
+  "description": "ollien.com",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ollien/ollien.com.git"
+  },
+  "author": "ollien",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ollien/ollien.com/issues"
+  },
+  "homepage": "https://github.com/ollien/ollien.com"
+}
