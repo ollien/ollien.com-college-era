@@ -1,7 +1,7 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var autoprefixer = require("gulp-autoprefixer");
-var gulpif = require("gulp-if"):
+var gulpif = require("gulp-if");
 var clean_css = require("gulp-clean-css");
 var yargs = require("yargs");
 
@@ -16,8 +16,8 @@ gulp.task("sass", function() {
 			],
 			cascade: false
 		}))
-		.pipe(gulpif(yargs.argv.prod, clean_css()))
-		.pipe(gulpif(yargs.argv.dest, gulp.dest(yargs.argv.dest), gulp.dest("./")))
+		.pipe(gulpif(yargs.argv.hasOwnProperty("prod"), clean_css()))
+		.pipe(gulpif(yargs.argv.hasOwnProperty("dest"), gulp.dest(yargs.argv.dest), gulp.dest("./")))
 });
 
 gulp.task("watch", function() {
