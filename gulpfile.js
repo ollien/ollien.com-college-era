@@ -5,7 +5,7 @@ var gulpif = require("gulp-if"):
 var clean_css = require("gulp-clean-css");
 var yargs = require("yargs");
 
-//Write scss to file. Use prod flog to minify css.
+//Write scss to file. Use prod flog to minify css, or the dest flag to set the destination of the build
 gulp.task("sass", function() {
 	return gulp.src("./index.scss")
 		.pipe(sass().on("error", sass.logError))
@@ -17,7 +17,7 @@ gulp.task("sass", function() {
 			cascade: false
 		}))
 		.pipe(gulpif(yargs.argv.prod, clean_css()))
-		.pipe(gulp.dest("./"))
+		.pipe(gulpif(yargs.argv.dest, gulp.dest(yargs.argv.dest), gulp.dest("./")))
 });
 
 gulp.task("watch", function() {
