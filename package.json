@@ -1,0 +1,25 @@
+{
+  "name": "ollien.com",
+  "version": "2.0.0",
+  "description": "ollien.com",
+  "dependencies": {},
+  "devDependencies": {
+    "clean-css": "^4.1.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.5.0",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^3.1.0",
+    "yargs": "^8.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ollien/ollien.com.git"
+  },
+  "author": "ollien",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ollien/ollien.com/issues"
+  },
+  "homepage": "https://github.com/ollien/ollien.com"
+}
