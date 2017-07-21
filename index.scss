@@ -16,6 +16,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
+	overflow: none;
 }
 
 #flex-container {
@@ -25,8 +26,11 @@ html, body {
 	height: 100%;
 	padding: 0 $outer-padding-small;
 	font-family: "Montserrat";
+	overflow: none;
 	white-space: nowrap;
-	overflow-x: scroll;
+	@media (max-width: $small-width-total) {
+		flex-flow: column;
+	}
 
 	div {
 		padding: 0 $padding-small;
@@ -43,18 +47,24 @@ html, body {
 #circle {
 	width: $circle-width-small;
 
-	@media (min-width: $big-width-total) {
+	@media (min-width: $big-width-total), (max-width: $small-width-total) {
 		width: $circle-width-big;
 	}
 }
 
-#overflow-container {
-	width: 100%;
+#info-container {
+	display: flex;
+	justify-content: space-between;
+	@media (max-width: $small-width-total) {
+		position: relative;
+		margin-top: 50px;
+		width: 100%;
+		align-items: center;
+	}
 }
 
 #personal-info {
 	width: $info-width-small;
-	display: inline-block;
 	#realname {
 		font-size: 40px;
 		margin: 0;
@@ -101,22 +111,24 @@ html, body {
 
 #links {
 	color: #000;
-	display: inline-block;
 	font-size: 24px;
 	list-style: none;
+	margin: 0;
+	margin-top: auto;
 	text-align: right;
-	padding: 0;
-	padding-right: $padding-small;
 	width: $links-width-small;
 
 	a.social-link {
 		color: #2872c5;
 	}
 
+	@media (max-width: $small-width-total) {
+		padding: 0 $padding-small;
+	}
+
 	@media (min-width: $big-width-total) {
 		width: $links-width-big;
 		font-size: 32px;
-		padding-right: $padding-big;
 	}
 }
 
