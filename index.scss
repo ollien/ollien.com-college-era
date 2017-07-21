@@ -25,6 +25,7 @@ html, body {
 	padding: 0 $outer-padding-small;
 	font-family: "Montserrat";
 	white-space: nowrap;
+	overflow-x: scroll;
 
 	div {
 		padding: 0 $padding-small;
@@ -46,8 +47,13 @@ html, body {
 	}
 }
 
+#overflow-container {
+	width: 100%;
+}
+
 #personal-info {
 	width: $info-width-small;
+	display: inline-block;
 	#realname {
 		font-size: 40px;
 		margin: 0;
@@ -94,10 +100,12 @@ html, body {
 
 #links {
 	color: #000;
+	display: inline-block;
 	font-size: 24px;
 	list-style: none;
 	text-align: right;
 	padding: 0;
+	padding-right: $padding-small;
 	width: $links-width-small;
 
 	a.social-link {
@@ -107,6 +115,7 @@ html, body {
 	@media (min-width: $big-width-total) {
 		width: $links-width-big;
 		font-size: 32px;
+		padding-right: $padding-big;
 	}
 }
 
