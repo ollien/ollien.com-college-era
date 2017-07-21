@@ -3,13 +3,14 @@ $info-width-small: 350px;
 $links-width-small: 300px;
 $outer-padding-small: 50px;
 $padding-small: 50px;
+$small-width-total: $circle-width-small + $info-width-small + $links-width-small + $padding-small * 2 + $outer-padding-small * 2;
 
 $circle-width-big: 300px;
 $info-width-big: 450px;
 $links-width-big: 400px;
 $outer-padding-big: 80px;
 $padding-big: 50px;
-$big-width-total: $circle-width-big + $info-width-big + $links-width-big + $padding-big + $outer-padding-big;
+$big-width-total: $circle-width-big + $info-width-big + $links-width-big + $padding-big * 2 + $outer-padding-big * 2;
 
 html, body {
 	height: 100%;
