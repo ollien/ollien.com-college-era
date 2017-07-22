@@ -35,8 +35,10 @@ ul {
 	max-width: 1024px;
 	margin: 0 auto;
 
+	//Exception for narrow/tall windows. We don't them to have huge spaings
 	@media (min-height: 750px) and (max-width: 768px){
 		justify-content: center;
+
 		>div {
 			margin-top: 50px;
 		}
@@ -86,11 +88,11 @@ ul {
 		font-size: 24px;
 	}
 
-
 	@media (min-width: 768px) {
 		h1 {
 			font-size: 54px;
 		}
+
 		h2 {
 			font-size: 48px;
 		}
