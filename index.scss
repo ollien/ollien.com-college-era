@@ -32,6 +32,8 @@ ul {
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
 
 	@media (min-height: 750px) {
 		justify-content: center;
