@@ -35,6 +35,9 @@ ul {
 
 #circle {
 	width: 300px;
+	@media (min-width: 768px) {
+		width: 450px;
+	}
 }
 
 #info-wide-container {
