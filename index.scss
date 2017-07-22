@@ -43,21 +43,11 @@ ul {
 	width: 100%;
 }
 
-#personal-info {
-	text-align: center;
-	ul {
-		li {
-			text-align: left;
-		}
-	}
-
-	#name-container {
-		margin-left: auto;
-		margin-right: auto;
-		text-align: left;
-		margin-bottom: 20px;
-		font-size: 32px;
-	}
+#name-container {
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: left;
+	font-size: 32px;
 }
 
 #taglines {
