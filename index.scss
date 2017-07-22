@@ -126,6 +126,10 @@ ul {
 		font-size: 35px;
 	}
 
+	@media (min-width: 768px) {
+		display: none;
+	}
+
 	li.social-icon {
 		text-align: left;
 		display: inline;
