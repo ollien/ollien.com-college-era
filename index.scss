@@ -13,3 +13,76 @@ html, body {
 	box-sizing: border-box;
 	font-family: "Montserrat", sans-serif;
 }
+
+h1, h2 {
+	font-weight: 600;
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#flex-container {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+#circle {
+	width: $circle-size-1;
+}
+
+#info-container {
+	text-align: center;
+	ul {
+		display: inline-block;
+		li {
+			text-align: left;
+		}
+	}
+	#name {
+		text-align: left;
+		margin-bottom: 20px;
+	}
+}
+
+#taglines {
+	font-size: 21px;
+	font-weight: 500;
+	#wpi {
+		color: #ac2b37;
+	}
+
+	#programmer {
+		color: #0047ab;
+	}
+
+	#heart {
+		color: #d13131;
+	}
+}
+
+#links {
+	display: none !important;
+}
+
+#link-icons {
+	display: inline-block;
+	font-size: 30px;
+	li.social-icon {
+		text-align: left;
+		display: inline;
+		a {
+			color: #000;
+			text-decoration: none;
+		}
+		a:hover {
+			color: $link-color;
+		}
+	}
+}
