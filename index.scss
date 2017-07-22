@@ -40,6 +40,7 @@ ul {
 #info-container {
 	display: flex;
 	flex-flow: rows;
+	width: 100%;
 }
 
 #personal-info {
@@ -69,6 +70,10 @@ ul {
 		font-size: 25px;
 	}
 
+	@media (min-width: 768px) {
+		font-size: 32px;
+	}
+
 	#wpi {
 		color: #ac2b37;
 	}
@@ -84,6 +89,19 @@ ul {
 
 #link-container {
 	display: none;
+	margin-left: auto;
+	margin-top: auto;
+
+	@media (min-width: 768px) {
+		display: inline-block;
+	}
+}
+
+#links {
+	text-align: right;
+	@media (min-width: 768px) {
+		font-size: 32px;
+	}
 }
 
 #link-icons {
