@@ -37,16 +37,10 @@ ul {
 
 	@media (min-height: 750px) {
 		justify-content: center;
-		div {
-			margin-top: 25px;
-			margin-bottom: 25px;
+		>div {
+			margin-top: 50px;
 		}
 	}
-
-	@media (min-width: 768px) {
-		justify-content: space-between;
-	}
-
 }
 
 #circle {
@@ -116,7 +110,6 @@ ul {
 #link-container {
 	display: none;
 	margin-left: auto;
-	margin-top: auto;
 
 	@media (min-width: 768px) {
 		display: inline-block;
