@@ -14,4 +14,4 @@ gulp sass --prod --dest=static/
 cp -r /home/ollien.com/ollien.com/{index.html,static/} /home/ollien.com/www/
 echo "Copied necessary files to ollien.com volume."
 echo "Starting nginx..."
-nginx -g "daemon off;"
+exec nginx -g "daemon off;"
