@@ -160,10 +160,20 @@ ul {
 
 	a {
 		color: $link-color;
+		text-decoration: none;
+
+		i {
+			color: #000;
+			font-size: $tagline-link-size-2 + 4px;
+		}
+
+		span.link-text {
+			text-decoration: underline;
+		}
 	}
 
-	i {
-		font-size: $tagline-link-size-2 + 4px;
+	a:hover > i {
+		color: $link-color;
 	}
 }
 
