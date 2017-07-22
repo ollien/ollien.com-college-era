@@ -60,9 +60,11 @@ ul {
 	font-size: 21px;
 	font-weight: 500;
 
+	//Slightly larger mobile devices
 	@media (min-width: 375px) {
 		font-size: 25px;
 	}
+
 	#wpi {
 		color: #ac2b37;
 	}
@@ -84,9 +86,11 @@ ul {
 	display: inline-block;
 	font-size: 30px;
 
+	//Slightly larger mobile devices
 	@media (min-width: 375px) {
 		font-size: 35px;
 	}
+
 	li.social-icon {
 		text-align: left;
 		display: inline;
