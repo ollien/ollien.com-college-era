@@ -1,134 +1,196 @@
-$circle-width-small: 250px;
-$info-width-small: 350px;
-$links-width-small: 300px;
-$outer-padding-small: 50px;
-$padding-small: 50px;
-$small-width-total: $circle-width-small + $info-width-small + $links-width-small + $padding-small * 2 + $outer-padding-small * 2;
+$tagline-link-size-1: 26px;
+$tagline-link-size-2: 36px;
 
-$circle-width-big: 300px;
-$info-width-big: 450px;
-$links-width-big: 400px;
-$outer-padding-big: 80px;
-$padding-big: 50px;
-$big-width-total: $circle-width-big + $info-width-big + $links-width-big + $padding-big * 2 + $outer-padding-big * 2;
+$link-color: #2872c5;
+
+html {
+	padding: 8px;
+}
 
 html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
-	overflow: none;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+
+h1, h2 {
+	font-weight: 600;
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 #flex-container {
 	display: flex;
-	justify-content: center;
+	flex-flow: column;
+	justify-content: space-between;
 	align-items: center;
 	height: 100%;
-	padding: 0 $outer-padding-small;
-	font-family: "Montserrat";
-	overflow: none;
-	white-space: nowrap;
-	min-width: $small-width-total - $circle-width-big;
-	@media (max-width: $small-width-total) {
-		flex-flow: column;
+	max-width: 1024px;
+	margin: 0 auto;
+
+	//Exception for narrow/tall windows. We don't them to have huge spaings
+	@media (min-height: 750px) and (max-width: 768px){
+		justify-content: center;
+
+		>div {
+			margin-top: 50px;
+		}
 	}
 
-	div {
-		padding: 0 $padding-small;
-	}
-
-	@media (min-width: $big-width-total) {
-		padding: 0 $outer-padding-big;
-		div {
-			padding: 0 $padding-big;
+	//Exceptions for tiny but tall screens
+	@media (min-height: 750px) and (max-width: 300px){
+		>div {
+			margin-top: 10px;
 		}
 	}
 }
 
 #circle {
-	width: $circle-width-small;
+	width: 300px;
 
-	@media (min-width: $big-width-total), (max-width: $small-width-total) {
-		width: $circle-width-big;
+	@media (min-width: 768px) {
+		width: 450px;
 	}
+
+	//Exception for tiny screens.
+	@media (max-width: 300px) {
+		width: 100vw;
+	}
+
 }
 
-#info-container {
+#info-wide-container {
 	display: flex;
-	justify-content: space-between;
-	@media (max-width: $small-width-total) {
-		position: relative;
-		margin-top: 50px;
-		width: 100%;
-		align-items: center;
+	flex-flow: row;
+	justify-content: center;
+	min-height: 96px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#name-container {
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: left;
+
+	h1 {
+		font-size: 32px;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+	@media (min-width: 768px) {
+		h1 {
+			font-size: 54px;
+		}
+
+		h2 {
+			font-size: 48px;
+		}
+	}
+
+	//Exception for tiny screens
+	@media (max-width: 190px) {
+		h1 {
+			font-size: 16vw;
+		}
+
+		h2 {
+			font-size: 12vw;
+		}
 	}
 }
 
-#personal-info {
-	width: $info-width-small;
-	#realname {
-		font-size: 40px;
-		margin: 0;
+#taglines {
+	font-size: 21px;
+	font-weight: 500;
+
+	//Slightly larger mobile devices
+	@media (min-width: 375px) {
+		font-size: $tagline-link-size-1;
 	}
 
-	#name {
-		align-text: center;
-		font-size: 30px;
-		margin-top: 0;
+	@media (min-width: 768px) {
+		font-size: $tagline-link-size-2;
 	}
 
-	h3.tagline {
-		font-size: 24px;
-		margin: 0;
+	//Exception for tiny screens
+	@media (max-width: 245px) {
+		font-size: 8vw;
 	}
+
 
 	#wpi {
-		color: #AC2B37;
+		color: #ac2b37;
 	}
 
 	#programmer {
-		color: #0047AB;
+		color: #0047ab;
 	}
 
 	#heart {
-		color: #D13131;
+		color: #d13131;
 	}
+}
 
-	@media (min-width: $big-width-total) {
-		width: $info-width-big;
-		#realname {
-			font-size: 55px;
-		}
+#link-container {
+	display: none;
+	margin-left: auto;
 
-		#name {
-			font-size: 40px
-		}
-
-		h3.tagline {
-			font-size: 32px;
-		}
+	@media (min-width: 768px) {
+		display: inline-block;
 	}
 }
 
 #links {
-	font-size: 24px;
-	list-style: none;
-	margin: 0;
-	margin-top: auto;
 	text-align: right;
-	width: $links-width-small;
 
-	a.social-link {
-		color: #2872c5;
+	@media (min-width: 768px) {
+		font-size: $tagline-link-size-2;
 	}
 
-	@media (max-width: $small-width-total) {
-		padding: 0 $padding-small;
-	}
-
-	@media (min-width: $big-width-total) {
-		width: $links-width-big;
-		font-size: 32px;
+	i {
+		font-size: $tagline-link-size-2 + 4px;
 	}
 }
 
+#link-icons {
+	display: inline-block;
+	font-size: 30px;
+
+	//Slightly larger mobile devices
+	@media (min-width: 375px) {
+		font-size: 35px;
+	}
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+
+	li.social-icon {
+		text-align: left;
+		display: inline;
+
+		@media (max-width: 116px) {
+			display: block;
+		}
+
+		a {
+			color: #000;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: $link-color;
+		}
+	}
+}
