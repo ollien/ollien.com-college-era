@@ -31,6 +31,19 @@ ul {
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
+
+	@media (min-height: 750px) {
+		justify-content: center;
+		div {
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		justify-content: space-between;
+	}
+
 }
 
 #circle {
