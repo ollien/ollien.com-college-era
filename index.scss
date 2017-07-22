@@ -28,6 +28,7 @@ html, body {
 	font-family: "Montserrat";
 	overflow: none;
 	white-space: nowrap;
+	min-width: $small-width-total - $circle-width-big;
 	@media (max-width: $small-width-total) {
 		flex-flow: column;
 	}
