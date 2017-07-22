@@ -93,6 +93,9 @@ ul {
 	@media (min-width: 768px) {
 		font-size: $tagline-link-size-2;
 	}
+	i {
+		font-size: $tagline-link-size-2 + 4px;
+	}
 }
 
 #link-icons {
