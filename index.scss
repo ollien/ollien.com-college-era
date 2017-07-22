@@ -107,9 +107,11 @@ ul {
 
 #links {
 	text-align: right;
+
 	@media (min-width: 768px) {
 		font-size: $tagline-link-size-2;
 	}
+
 	i {
 		font-size: $tagline-link-size-2 + 4px;
 	}
@@ -127,10 +129,12 @@ ul {
 	li.social-icon {
 		text-align: left;
 		display: inline;
+
 		a {
 			color: #000;
 			text-decoration: none;
 		}
+
 		a:hover {
 			color: $link-color;
 		}
