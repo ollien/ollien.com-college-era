@@ -35,7 +35,7 @@ ul {
 	max-width: 1024px;
 	margin: 0 auto;
 
-	@media (min-height: 750px) {
+	@media (min-height: 750px) and (max-width: 768px){
 		justify-content: center;
 		>div {
 			margin-top: 50px;
@@ -54,6 +54,7 @@ ul {
 	display: flex;
 	flex-flow: row;
 	justify-content: center;
+	min-height: 96px;
 	width: 100%;
 	margin: 0 auto;
 }
