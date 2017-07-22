@@ -38,6 +38,11 @@ ul {
 }
 
 #info-container {
+	display: flex;
+	flex-flow: rows;
+}
+
+#personal-info {
 	text-align: center;
 	ul {
 		li {
