@@ -1,3 +1,4 @@
+$tagline-link-size-1: 26px;
 $tagline-link-size-2: 36px;
 
 $link-color: #2872c5;
@@ -90,7 +91,7 @@ ul {
 
 	//Slightly larger mobile devices
 	@media (min-width: 375px) {
-		font-size: 25px;
+		font-size: $tagline-link-size-1;
 	}
 
 	@media (min-width: 768px) {
