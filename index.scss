@@ -37,7 +37,7 @@ ul {
 	width: $circle-size-1;
 }
 
-#info-container {
+#info-wide-container {
 	display: flex;
 	flex-flow: rows;
 	width: 100%;
@@ -51,11 +51,9 @@ ul {
 		}
 	}
 
-	#realname {
-		text-align: left;
-	}
-
-	#name {
+	#name-container {
+		margin-left: auto;
+		margin-right: auto;
 		text-align: left;
 		margin-bottom: 20px;
 	}
