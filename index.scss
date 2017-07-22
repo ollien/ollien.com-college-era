@@ -1,5 +1,7 @@
 $circle-size-1: 300px;
 
+$tagline-link-size-2: 36px;
+
 $link-color: #2872c5;
 
 html {
@@ -60,7 +62,7 @@ ul {
 	}
 
 	@media (min-width: 768px) {
-		font-size: 32px;
+		font-size: $tagline-link-size-2;
 	}
 
 	#wpi {
@@ -89,7 +91,7 @@ ul {
 #links {
 	text-align: right;
 	@media (min-width: 768px) {
-		font-size: 32px;
+		font-size: $tagline-link-size-2;
 	}
 }
 
