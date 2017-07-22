@@ -41,13 +41,27 @@ ul {
 			margin-top: 50px;
 		}
 	}
+
+	//Exceptions for tiny but tall screens
+	@media (min-height: 750px) and (max-width: 300px){
+		>div {
+			margin-top: 10px;
+		}
+	}
 }
 
 #circle {
 	width: 300px;
+
 	@media (min-width: 768px) {
 		width: 450px;
 	}
+
+	//Exception for tiny screens.
+	@media (max-width: 300px) {
+		width: 100vw;
+	}
+
 }
 
 #info-wide-container {
@@ -72,12 +86,24 @@ ul {
 		font-size: 24px;
 	}
 
+
 	@media (min-width: 768px) {
 		h1 {
 			font-size: 54px;
 		}
 		h2 {
 			font-size: 48px;
+		}
+	}
+
+	//Exception for tiny screens
+	@media (max-width: 190px) {
+		h1 {
+			font-size: 16vw;
+		}
+
+		h2 {
+			font-size: 12vw;
 		}
 	}
 }
@@ -94,6 +120,12 @@ ul {
 	@media (min-width: 768px) {
 		font-size: $tagline-link-size-2;
 	}
+
+	//Exception for tiny screens
+	@media (max-width: 245px) {
+		font-size: 8vw;
+	}
+
 
 	#wpi {
 		color: #ac2b37;
@@ -145,6 +177,10 @@ ul {
 	li.social-icon {
 		text-align: left;
 		display: inline;
+
+		@media (max-width: 116px) {
+			display: block;
+		}
 
 		a {
 			color: #000;
