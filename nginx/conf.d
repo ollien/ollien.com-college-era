@@ -1,3 +1,4 @@
+#-*- nginx;-*-
 server {
 	listen 8002;
 	server_name homepage;
