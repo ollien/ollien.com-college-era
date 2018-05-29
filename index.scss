@@ -1,7 +1,22 @@
-$tagline-link-size-1: 26px;
-$tagline-link-size-2: 36px;
+$image-size: 50vmin;
+$name-title-size: 6vmin;
+$name-subtitle-size: 5vmin;
+$tagline-link-size: 4.5vmin;
+$link-icon-size: 6vmin;
+$link-icon-size-2: 7vmin;
+$link-icon-size-3: 10vmin;
+$item-spacing: 2vh;
 
 $link-color: #2872c5;
+
+@mixin mobile-compatiable-font-size($base-size) {
+	$mobile-adjustment-factor: 3vmin;
+	font-size: $base-size;
+	@media (max-width: 480px) {
+		font-size: $base-size + $mobile-adjustment-factor;
+	}
+
+}
 
 html {
 	padding: 8px;
@@ -29,16 +44,15 @@ ul {
 #flex-container {
 	display: flex;
 	flex-flow: column;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	height: 100%;
-	max-width: 1024px;
+	min-height: 100%;
+	min-width: 10vh;
+	max-width: 150vh;
 	margin: 0 auto;
 
-	@media (min-width: 768px) {
-		>div {
-			margin-top: 25px;
-		}
+	>div {
+		margin-top: $item-spacing;
 	}
 
 	//Exception for narrow/tall windows. We don't them to have huge spaings
@@ -49,7 +63,7 @@ ul {
 	//Exceptions for tiny but tall screens
 	@media (min-height: 750px) and (max-width: 300px){
 		>div {
-			margin-top: 10px;
+			margin-top: 1vh;
 		}
 	}
 }
@@ -65,75 +79,35 @@ ul {
 }
 
 #circle {
-	width: 300px;
-
-	@media (min-width: 768px) {
-		width: 450px;
-	}
-
-	//Exception for tiny screens.
-	@media (max-width: 300px) {
-		width: 100vw;
-	}
-
+	width: $image-size;
+	max-width: 450px;
 }
 
 #info-wide-container {
 	display: flex;
 	flex-flow: row;
 	justify-content: center;
-	min-height: 96px;
-	width: 100%;
+	max-width: 100%;
 	margin: 0 auto;
+	@include mobile-compatiable-font-size($tagline-link-size);
 }
 
 #name-container {
 	margin: 0 auto;
-	margin-bottom: 20px;
 	text-align: center;
 
 	h1 {
-		font-size: 32px;
+		@include mobile-compatiable-font-size($tagline-link-size);
 	}
 
 	h2 {
-		font-size: 24px;
-	}
-
-	@media (min-width: 768px) {
-		h1 {
-			font-size: 54px;
-		}
-
-		h2 {
-			font-size: 48px;
-		}
-	}
-
-	//Exception for tiny screens
-	@media (max-width: 190px) {
-		h1 {
-			font-size: 16vw;
-		}
-
-		h2 {
-			font-size: 12vw;
-		}
+		@include mobile-compatiable-font-size($tagline-link-size);
 	}
 }
 
 #taglines {
-	font-size: 21px;
 	font-weight: 500;
-
-	//Slightly larger mobile devices
-	@media (min-width: 375px) {
-		font-size: $tagline-link-size-1;
-	}
-
-	@media (min-width: 768px) {
-		font-size: $tagline-link-size-2;
-	}
+	white-space: nowrap;
 
 	//Exception for tiny screens
 	@media (max-width: 245px) {
@@ -166,17 +140,12 @@ ul {
 #links {
 	text-align: right;
 
-	@media (min-width: 768px) {
-		font-size: $tagline-link-size-2;
-	}
-
 	a {
 		color: $link-color;
 		text-decoration: none;
 
 		i {
 			color: #000;
-			font-size: $tagline-link-size-2 + 4px;
 		}
 
 		span.link-text {
@@ -199,11 +168,12 @@ ul {
 
 #link-icons {
 	display: inline-block;
-	font-size: 30px;
-
-	//Slightly larger mobile devices
-	@media (min-width: 375px) {
-		font-size: 35px;
+	font-size: $link-icon-size;
+	@media (max-width: 768px) {
+		font-size: $link-icon-size-2;
+	}
+	@media (max-width: 480px) {
+		font-size: $link-icon-size-3;
 	}
 
 	li.social-icon {
