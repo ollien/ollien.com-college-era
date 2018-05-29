@@ -8,11 +8,12 @@ $link-icon-size-3: 10vmin;
 $item-spacing: 2vh;
 
 $link-color: #2872c5;
+$mobile-threshold: 480px;
 
 @mixin mobile-compatiable-font-size($base-size) {
 	$mobile-adjustment-factor: 3vmin;
 	font-size: $base-size;
-	@media (max-width: 480px) {
+	@media (max-width: $mobile-threshold) {
 		font-size: $base-size + $mobile-adjustment-factor;
 	}
 
@@ -132,7 +133,7 @@ ul {
 	display: none;
 	margin-left: auto;
 
-	@media (min-width: 768px) {
+	@media (min-width: $mobile-threshold) {
 		display: inline-block;
 	}
 }
@@ -159,7 +160,7 @@ ul {
 }
 
 #link-icon-container {
-	@media (min-width: 768px) {
+	@media (min-width: $mobile-threshold) {
 		height: 0;
 		overflow: hidden;
 		visibility: hidden;
@@ -172,7 +173,7 @@ ul {
 	@media (max-width: 768px) {
 		font-size: $link-icon-size-2;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: $mobile-threshold) {
 		font-size: $link-icon-size-3;
 	}
 
