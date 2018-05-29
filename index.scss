@@ -97,11 +97,11 @@ ul {
 	text-align: center;
 
 	h1 {
-		@include mobile-compatiable-font-size($tagline-link-size);
+		@include mobile-compatiable-font-size($name-title-size);
 	}
 
 	h2 {
-		@include mobile-compatiable-font-size($tagline-link-size);
+		@include mobile-compatiable-font-size($name-subtitle-size);
 	}
 }
 
