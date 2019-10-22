@@ -7,6 +7,7 @@ var yargs = require("yargs");
 
 //Write scss to file. Use prod flog to minify css, or the dest flag to set the destination of the build
 gulp.task("sass", function() {
+	let dest = yargs.argv.hasOwnProperty("dest") ? yargs.argv.dest : "./";
 	return gulp.src("./index.scss")
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer({
@@ -17,7 +18,7 @@ gulp.task("sass", function() {
 			cascade: false
 		}))
 		.pipe(gulpif(yargs.argv.hasOwnProperty("prod"), clean_css()))
-		.pipe(gulpif(yargs.argv.hasOwnProperty("dest"), gulp.dest(yargs.argv.dest), gulp.dest("./")))
+		.pipe(gulp.dest(dest));
 });
 
 gulp.task("watch", function() {
