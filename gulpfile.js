@@ -5,6 +5,8 @@ var gulpif = require("gulp-if");
 var clean_css = require("gulp-clean-css");
 var yargs = require("yargs");
 
+gulp.task("default", ["sass"]);
+
 //Write scss to file. Use prod flog to minify css, or the dest flag to set the destination of the build
 gulp.task("sass", function() {
 	let dest = yargs.argv.hasOwnProperty("dest") ? yargs.argv.dest : "./";
