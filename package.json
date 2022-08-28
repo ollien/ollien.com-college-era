@@ -4,14 +4,19 @@
   "description": "ollien.com",
   "dependencies": {},
   "devDependencies": {
-    "clean-css": "^4.1.5",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.5.0",
-    "gulp-if": "^2.0.2",
-    "gulp-sass": "^3.1.0",
+    "sass": "^1.54.5",
+    "clean-css": "^5.3.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-if": "^3.0.0",
+    "gulp-sass": "^5.1.0",
     "yargs": "^8.0.2"
   },
+  "browserslist": [
+	  "last 2 versions",
+	  "ie >= 11"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ollien/ollien.com.git"
